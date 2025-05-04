@@ -14,6 +14,10 @@ class LiveStatus(commands.Cog):
 
     @commands.command(name="live_start")
     async def start_live(self, ctx):
+        """
+        Mostrar atualizações da partida ao vivo.
+        Uso: !live_start
+        """
         chat_id = ctx.channel.id
         if live_states.get(chat_id, {}).get("status") == "active":
             return await ctx.reply("🔴 Live já está ativo.")
@@ -22,6 +26,10 @@ class LiveStatus(commands.Cog):
 
     @commands.command(name="live_stop")
     async def stop_live(self, ctx):
+        """
+        Parar atualizações da partida ao vivo.
+        Uso: !live_stop
+        """
         chat_id = ctx.channel.id
         if chat_id in live_states:
             live_states.pop(chat_id)

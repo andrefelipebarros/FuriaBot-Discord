@@ -40,10 +40,5 @@ bot = MyBot()
 async def on_ready():
     print(f"Bot online: {bot.user}")
 
-# --- TEST COMMAND ---
-@bot.command(help="Diz olá ao usuário.")
-async def ola(ctx):
-    await ctx.reply("Olá! Tudo bem?")
-
 if __name__ == "__main__":
     bot.run(config.DISCORD_TOKEN)

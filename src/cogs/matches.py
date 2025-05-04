@@ -66,7 +66,7 @@ class Matches(commands.Cog):
         Uso: !next
         """
         view = NextMatchView()
-        await ctx.send("Selecione a linha:", view=view)
+        await ctx.send("Selecione a line:", view=view)
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(Matches(bot))
