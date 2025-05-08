@@ -77,7 +77,7 @@ class LatestMatch(commands.Cog):
         Uso: !last
         """
         view = LatestMatchView()
-        await ctx.send("Selecione a linha para ver o último jogo:", view=view)
+        await ctx.reply("Selecione a linha para ver o último jogo:", view=view)
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(LatestMatch(bot))
