@@ -36,7 +36,7 @@ Ele permite:
 - 📋 **Enquete de Torcida**: vote no jogador que vai brilhar.  
 - 🔄 **Toggle Line**: alterne entre lineup masculino e feminino.  
 - 🔗 **Redes Sociais**: links oficiais.  
-- ❓ **/help**: menu de ajuda interativo.  
+- ❓ **!help**: menu de ajuda interativo.  
 
 ### 🏗️ Arquitetura
 
@@ -49,7 +49,7 @@ sequenceDiagram
     participant Services
     participant APIs
 
-    Usuário->>Discord: /live, /next, /stats, botões
+    Usuário->>Discord: !live, !next, !stats, botões
     Discord->>Bot: Evento de Interação
     Bot->>Cogs: live_status, matches, stats, poll, socials
     Cogs->>Services: fetch_live, fetch_next, scrape_results, fetch_stats
@@ -123,14 +123,14 @@ python bot.py
 
 | Comando       | Descrição                                |
 | ------------- | ---------------------------------------- |
-| `/live`       | Inicia monitoramento de partidas ao vivo |
-| `/stoplive`   | Encerra monitoramento                    |
-| `/nextmatch`  | Exibe informações da próxima partida     |
-| `/lastresult` | Exibe o último resultado                 |
-| `/stats`      | Estatísticas de jogador ou partida       |
-| `/poll`       | Cria enquete de torcida                  |
-| `/socials`    | Links das redes sociais oficiais         |
-| `/help`       | Exibe menu de ajuda                      |
+| `!live`       | Inicia monitoramento de partidas ao vivo |
+| `!stoplive`   | Encerra monitoramento                    |
+| `!next`  | Exibe informações da próxima partida     |
+| `!last` | Exibe o último resultado                 |
+| `!stats`      | Estatísticas de jogador ou partida       |
+| `!poll`       | Cria enquete de torcida                  |
+| `!socials`    | Links das redes sociais oficiais         |
+| `!help`       | Exibe menu de ajuda                      |
 
 ### 🚀 Roadmap (Futuras Melhorias)
 
@@ -172,7 +172,7 @@ Este projeto está licenciado sob a licença MIT.
 - 📋 **Fan Poll**: vote for your player.  
 - 🔄 **Toggle Line**: switch men’s/women’s roster.  
 - 🔗 **Socials**: official links.  
-- ❓ **/help**: interactive help menu.  
+- ❓ **!help**: interactive help menu.  
 
 ### 🏗️ Architecture
 
@@ -185,7 +185,7 @@ sequenceDiagram
     participant Services
     participant APIs
 
-    User->>Discord: /live, /nextmatch, /stats, buttons
+    User->>Discord: !live, !next, !stats, buttons
     Discord->>Bot: Interaction event
     Bot->>Cogs: live_status, matches, stats, poll, socials
     Cogs->>Services: fetch_live, fetch_next, scrape_results, fetch_stats
@@ -259,14 +259,14 @@ python bot.py
 
 | Command       | Description                 |
 | ------------- | --------------------------- |
-| `/live`       | Start live match monitoring |
-| `/stoplive`   | Stop live monitoring        |
-| `/nextmatch`  | Show next match info        |
-| `/lastresult` | Show last match result      |
-| `/stats`      | Show player or match stats  |
-| `/poll`       | Create a fan poll           |
-| `/socials`    | Display social media links  |
-| `/help`       | Show help menu              |
+| `!live`       | Start live match monitoring |
+| `!stoplive`   | Stop live monitoring        |
+| `!next`  | Show next match info        |
+| `!last` | Show last match result      |
+| `!stats`      | Show player or match stats  |
+| `!poll`       | Create a fan poll           |
+| `!socials`    | Display social media links  |
+| `!help`       | Show help menu              |
 
 ### 🚀 Roadmap
 
