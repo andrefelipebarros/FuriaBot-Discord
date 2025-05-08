@@ -91,12 +91,12 @@ class Matches(commands.Cog):
             if gender:
                 gender = gender.lower()
                 if gender not in TEAM_SLUGS:
-                    return await ctx.send("⚠️ Parâmetro inválido. Use `male` ou `female`.")
+                    return await ctx.reply("⚠️ Parâmetro inválido. Use `male` ou `female`.")
                 team_slug = TEAM_SLUGS[gender]
                 upcoming = await fetch_upcoming_matches(team_slug)
 
                 if not upcoming:
-                    return await ctx.send("❌ Nenhuma próxima partida encontrada.")
+                    return await ctx.reply("❌ Nenhuma próxima partida encontrada.")
 
                 embed = discord.Embed(
                     title=f"🔥 Próximas Partidas - {title_map.get(team_slug)}",
@@ -108,9 +108,9 @@ class Matches(commands.Cog):
                     embed.add_field(name=date_time, value=f"{scoreline}\n🏆 {match['tournament']}", inline=False)
                 url = f"https://draft5.gg/equipe/{team_slug}/proximas-partidas"
                 embed.add_field(name="🔗 Onde ver", value=f"[Abrir no Draft5]({url})", inline=False)
-                await ctx.send(embed=embed, view=MatchView(team_slug))
+                await ctx.reply(embed=embed, view=MatchView(team_slug))
             else:
-                await ctx.send("Selecione um time:", view=MainView())
+                await ctx.reply("Selecione um time:", view=MainView())
 
 async def setup(bot: commands.Bot):
     await bot.add_cog(Matches(bot))
